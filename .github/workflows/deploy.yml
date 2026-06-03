@@ -21,11 +21,10 @@ jobs:
         with:
           node-version: 20
       - name: Install & build
-        working-directory: cda2-planning
         run: npm ci && npm run build
       - uses: actions/configure-pages@v4
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: cda2-planning/dist
+          path: dist
       - id: deployment
         uses: actions/deploy-pages@v4

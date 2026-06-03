@@ -26,8 +26,10 @@ export function useLegend() {
   function isChipActive(bloc: string): boolean {
     return stickyBloc.value === bloc
   }
-  function isCardDim(cardBloc: string): boolean {
-    return !!activeBloc.value && cardBloc !== activeBloc.value
+  function isCardDim(cardBloc: string | string[]): boolean {
+    if (!activeBloc.value) return false
+    if (Array.isArray(cardBloc)) return !cardBloc.includes(activeBloc.value)
+    return cardBloc !== activeBloc.value
   }
 
   return {

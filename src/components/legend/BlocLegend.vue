@@ -7,8 +7,8 @@ const props = defineProps<{
 }>()
 
 const MATIERES = [
-  'Git', 'Fondamentaux', 'JavaScript', 'TypeScript', 'Vision métier',
-  'Angular', 'CI/CD', 'Java', 'SQL', 'Spring Boot', 'Projet', 'Certification',
+  'Git', 'JavaScript', 'TypeScript', 'Vision métier', 'IA',
+  'Angular', 'CI/CD', 'Java', 'SQL', 'Spring Boot', 'Certification',
 ]
 </script>
 

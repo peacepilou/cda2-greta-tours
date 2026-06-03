@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { Week, WeekContent } from '../../types'
 import { blocColor } from '../../constants/colors'
-import { fmtRange, titleEmoji, titleText } from '../../utils/dates'
+import { fmtRange, titleEmoji, titleEmojis, titleText } from '../../utils/dates'
 
 const props = defineProps<{
   week: Week
@@ -69,7 +69,7 @@ const color = props.content?.bloc ? blocColor(props.content.bloc) : 'var(--borde
         >{{ pill[1] }}</span>
       </span>
     </div>
-    <div class="mini-emoji">{{ content ? titleEmoji(content.title) : '·' }}</div>
+    <div class="mini-emoji">{{ content ? titleEmojis(content.title) : '·' }}</div>
     <div class="mini-dates">{{ fmtRange(week.lundi, week.vendredi) }}</div>
     <div class="tip">{{ content ? titleText(content.title) : week.iso }}</div>
   </div>

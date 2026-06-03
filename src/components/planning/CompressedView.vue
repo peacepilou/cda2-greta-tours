@@ -30,7 +30,7 @@ const filteredWeeks = computed(() => {
         :key="w.iso"
         :week="w"
         :content="CONTENT[w.iso]"
-        :dim="legend.isCardDim(CONTENT[w.iso]?.bloc ?? '')"
+        :dim="legend.isCardDim([CONTENT[w.iso]?.bloc ?? '', ...(CONTENT[w.iso]?.extraBlocs ?? [])])"
         :alt-entreprise="cohort === 'ALT' && w.type === 'B'"
         :is-alt-view="cohort === 'ALT'"
         @open="emit('open', $event)"

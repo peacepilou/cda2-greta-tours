@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { Week, WeekContent } from '../../types'
 import { blocColor } from '../../constants/colors'
-import { fmtRange, titleEmoji, titleText } from '../../utils/dates'
+import { fmtRange, titleEmoji, titleEmojis, titleText } from '../../utils/dates'
 
 const props = defineProps<{
   week: Week
@@ -67,7 +67,7 @@ const IA_LABELS: Record<string, string> = {
       <span v-else-if="isPartial" class="wk-hrs">{{ week.hrs }}h</span>
     </div>
     <div class="wk-title">
-      <span class="em">{{ content ? titleEmoji(content.title) : '' }}</span>
+      <span class="em">{{ content ? titleEmojis(content.title) : '' }}</span>
       {{ content ? titleText(content.title) : 'Semaine ' + week.iso }}
     </div>
     <ul class="wk-notions">

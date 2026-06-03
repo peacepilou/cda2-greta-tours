@@ -20,6 +20,12 @@ export function titleEmoji(title: string): string {
   return m ? m[0] : '·'
 }
 
+export function titleEmojis(title: string): string {
+  if (!title) return '·'
+  const matches = [...title.matchAll(/\p{Emoji_Presentation}|\p{Emoji}️/gu)]
+  return matches.length ? matches.map(m => m[0]).join('') : '·'
+}
+
 export function titleText(title: string): string {
   return (title || '').replace(/^(\p{Emoji_Presentation}|\p{Emoji}️)\s*/u, '').trim()
 }

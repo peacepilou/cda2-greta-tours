@@ -19,6 +19,7 @@ export interface NotionLink {
 export interface WeekContent {
   title: string
   bloc: string
+  extraBlocs?: string[]   // blocs secondaires filtrables (en plus du bloc primaire)
   notions: string[]
   ia: string
   ia_mode: IaMode

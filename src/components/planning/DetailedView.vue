@@ -48,7 +48,7 @@ const monthGroups = computed(() => {
           :key="w.iso"
           :week="w"
           :content="CONTENT[w.iso]"
-          :dim="legend.isCardDim(CONTENT[w.iso]?.bloc ?? '')"
+          :dim="legend.isCardDim([CONTENT[w.iso]?.bloc ?? '', ...(CONTENT[w.iso]?.extraBlocs ?? [])])"
           @open="emit('open', $event)"
         />
       </div>

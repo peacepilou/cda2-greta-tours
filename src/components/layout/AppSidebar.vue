@@ -2,6 +2,7 @@
 import type { ViewMode } from '../../types'
 import { useNavigation } from '../../composables/useNavigation'
 import { useCohort } from '../../composables/useCohort'
+import logoSrc from '../../assets/brand-assets/logo/logo-graphite-ondark.svg'
 
 const { currentView, setView } = useNavigation()
 const { cohort, setCohort } = useCohort()
@@ -15,11 +16,7 @@ const navItems: Array<{ key: ViewMode; label: string }> = [
 
 <template>
   <div class="brand">
-    <div class="brand-mark">C2</div>
-    <div class="brand-text">
-      <div class="brand-title">CDA2</div>
-      <div class="brand-sub">GRETA Tours · 2026–2027</div>
-    </div>
+    <img :src="logoSrc" alt="CDA²" class="brand-logo" />
   </div>
 
   <div class="nav-section-label">Planning</div>

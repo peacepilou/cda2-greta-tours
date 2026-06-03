@@ -29,27 +29,10 @@
   margin-bottom: 4px;
   border-bottom: 1px solid var(--border-soft);
 }
-.brand-mark {
-  width: 38px; height: 38px;
-  border-radius: 11px;
-  display: grid; place-items: center;
-  font-family: var(--font-mono);
-  font-weight: 600;
-  font-size: 15px;
-  color: var(--bg);
-  background: linear-gradient(150deg, var(--accent-strong), var(--accent));
-  box-shadow: 0 4px 14px -4px var(--accent-tint);
-  flex-shrink: 0;
-}
-.brand-text { min-width: 0; }
-.brand-title {
-  font-size: 14px; font-weight: 700; color: var(--text);
-  letter-spacing: -0.01em; line-height: 1.2;
-}
-.brand-sub {
-  font-family: var(--font-mono);
-  font-size: 10.5px; color: var(--text-dim);
-  margin-top: 3px; letter-spacing: 0.01em;
+.brand-logo {
+  height: 46px;
+  width: auto;
+  display: block;
 }
 
 .nav-section-label {

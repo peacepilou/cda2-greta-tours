@@ -24,20 +24,20 @@ const { isALT } = useCohort()
           Semaines B — temps plein seuls
         </div>
         <ul class="list">
-          <li>Renforcement, katas, TP — aucune notion nouvelle</li>
-          <li>Les alternants rattrapent via Notion (pédagogie inversée)</li>
-          <li>Activités fun : Algo tournament, SQL Murder Mystery, Git scenarios</li>
+          <li>Renforcement, katas, autonomie — aucune notion nouvelle introduite</li>
+          <li>Moment clé pour avancer sur le <strong>projet fil rouge e-shop</strong> : architecture, composants, intégration</li>
+          <li>Activités : SQL Murder Mystery, Git scenarios, algo tournaments</li>
         </ul>
       </div>
       <div class="card" v-else>
         <div class="card-head">
           <span class="tag" style="background:oklch(0.74 0.10 290)"></span>
-          Semaines ALT — alternants en centre
+          Semaines B — alternants en entreprise
         </div>
         <ul class="list">
-          <li>Semaines B : alternants en entreprise → pas en centre</li>
-          <li>Semaines ALT dédiées (août–sept) : retour en centre avant jury</li>
-          <li>Relecture dossier · simulation jury · préparation orale</li>
+          <li>Ces semaines, les temps plein sont en centre — vous êtes en entreprise</li>
+          <li>Les cours et ressources Notion restent accessibles : idéal pour explorer à votre rythme ou préparer la semaine A suivante</li>
+          <li>Semaines ALT dédiées (août–sept) : retour en centre pour la préparation jury</li>
         </ul>
       </div>
     </div>

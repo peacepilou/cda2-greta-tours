@@ -21,21 +21,20 @@ export interface BcDef {
 }
 
 export const BLOCS_BARS: BlocBar[] = [
-  { label: 'Angular',         emoji: '🛡️', hrs: 137, bloc: 'Angular' },
   { label: 'JavaScript',      emoji: '🌼', hrs: 140, bloc: 'JavaScript' },
-  { label: 'Spring Boot',     emoji: '🍃', hrs: 105, bloc: 'Spring Boot' },
-  { label: 'Certification',   emoji: '🎓', hrs: 109, bloc: 'Certification' },
-  { label: 'Vision métier',   emoji: '🎯', hrs: 70,  bloc: 'Vision métier' },
-  { label: 'Java',            emoji: '☕', hrs: 67,  bloc: 'Java' },
-  { label: 'TypeScript',      emoji: '🟦', hrs: 60,  bloc: 'TypeScript' },
-  { label: 'CI/CD + Docker',  emoji: '⚙️', hrs: 35,  bloc: 'CI/CD' },
-  { label: 'SQL',             emoji: '🗄️', hrs: 70,  bloc: 'SQL' },
   { label: 'Git',             emoji: '🐙', hrs: 35,  bloc: 'Git' },
+  { label: 'Vision métier',   emoji: '🎯', hrs: 70,  bloc: 'Vision métier' },
   { label: 'IA fondamentaux', emoji: '🤖', hrs: 28,  bloc: 'IA' },
-  { label: 'Démarrage',       emoji: '✨', hrs: 11,  bloc: 'Démarrage' },
+  { label: 'TypeScript',      emoji: '🟦', hrs: 60,  bloc: 'TypeScript' },
+  { label: 'Angular',         emoji: '🛡️', hrs: 137, bloc: 'Angular' },
+  { label: 'Java',            emoji: '☕', hrs: 67,  bloc: 'Java' },
+  { label: 'SQL',             emoji: '🗄️', hrs: 70,  bloc: 'SQL' },
+  { label: 'Spring Boot',     emoji: '🍃', hrs: 105, bloc: 'Spring Boot' },
+  { label: 'CI/CD + Docker',  emoji: '⚙️', hrs: 35,  bloc: 'CI/CD' },
+  { label: 'Certification',   emoji: '🎓', hrs: 35,  bloc: 'Certification' },
 ]
 
-export const TOTAL_HRS = 872
+export const TOTAL_HRS = 782
 
 export const BC_CARDS: BcCard[] = [
   {

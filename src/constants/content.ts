@@ -106,6 +106,7 @@ export const CONTENT: Record<string, WeekContent> = {
   },
   S45: {
     title: '🎨 Figma + DOM katas + XSS',
+    extraBlocs: ['Fil rouge'],
     bloc: 'Vision métier',
     notions: [
       'J1 : Figma — wireframes e-shop avec IA (livrable : maquettes complètes des écrans clés)',
@@ -168,6 +169,7 @@ export const CONTENT: Record<string, WeekContent> = {
   S49: {
     title: '🟦 TS katas + Modélisation fil rouge',
     bloc: 'TypeScript',
+    extraBlocs: ['Fil rouge'],
     notions: [
       'Katas TypeScript — types avancés, utility types (Partial, Pick, Omit)',
       'Modélisation e-shop : entités, relations, schéma conceptuel (vision métier → données)',
@@ -200,6 +202,7 @@ export const CONTENT: Record<string, WeekContent> = {
   S51: {
     title: '🛡️ Angular — Démarrage fil rouge e-shop',
     bloc: 'Angular',
+    extraBlocs: ['Fil rouge'],
     notions: [
       'Setup repo fil rouge e-shop : architecture décidée, conventions posées, CI configurée',
       'Premier composant réel sur leur propre projet — pas un kata, pas un tuto',
@@ -220,7 +223,6 @@ export const CONTENT: Record<string, WeekContent> = {
     notions: [
       'Router (routes, RouterLink, ActivatedRoute, guards) + Formulaires réactifs (FormGroup, FormControl, Validators)',
       'Services @Injectable, HttpClient (GET/POST/PUT/DELETE) — injection de dépendances : le framework gère les instances',
-      '🔑 Semaine dense : tout ancré sur le fil rouge e-shop — chaque notion implémentée dans le vrai projet',
     ],
     ia: 'J1-J2 : sans IA (routing + formulaires) · J3-J5 : l\'IA génère les calls HttpClient → analyser les types de retour',
     ia_mode: 'mixed',
@@ -237,8 +239,9 @@ export const CONTENT: Record<string, WeekContent> = {
   S2: {
     title: '🛡️ Angular — Katas fil rouge (Router + Services)',
     bloc: 'Angular',
+    extraBlocs: ['Fil rouge'],
     notions: [
-      'Katas Angular sur le projet e-shop : routes, guards, formulaire de connexion/inscription',
+      'Application des notions sur le projet e-shop : routes, guards, formulaire de connexion/inscription',
       'Services Angular : pattern Repository, state management simple avec Signals',
       'Appels HTTP e-shop : liste produits, panier — calls réels (mock) vers l\'API Spring Boot à venir',
     ],
@@ -343,6 +346,7 @@ export const CONTENT: Record<string, WeekContent> = {
   S8: {
     title: '🍃 Spring Boot — Katas + Plan de tests',
     bloc: 'Spring Boot',
+    extraBlocs: ['Fil rouge'],
     notions: [
       'Katas Spring Boot : couche service, @Service, séparation des responsabilités, @ExceptionHandler',
       'Plan de tests formalisé : template, jeu d\'essai, données attendues vs obtenues — à remplir pour l\'e-shop',
@@ -363,7 +367,7 @@ export const CONTENT: Record<string, WeekContent> = {
   S9: {
     title: '🍃 Spring Security + JWT + 🐳 Docker',
     bloc: 'Spring Boot',
-    extraBlocs: ['CI/CD'],
+    extraBlocs: ['CI/CD', 'Fil rouge'],
     notions: [
       'Spring Security : filtres, JWT (claims signés, pas chiffrés — ce qu\'on peut lire, ce qu\'on ne doit pas y mettre)',
       'bcrypt, hachage mots de passe, rotation des tokens, gestion de l\'expiration',
@@ -383,6 +387,7 @@ export const CONTENT: Record<string, WeekContent> = {
   S10: {
     title: '⚙️ CI/CD Fullstack + Anglais certif',
     bloc: 'CI/CD',
+    extraBlocs: ['Fil rouge'],
     notions: [
       'GitHub Actions fullstack : lint, tests, build Angular + Spring Boot, déploiement VPS',
       'nginx reverse proxy, HTTPS Let\'s Encrypt, variables secrets GitHub, docker-compose prod',

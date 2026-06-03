@@ -71,6 +71,9 @@ const color = props.content?.bloc ? blocColor(props.content.bloc) : 'var(--borde
     </div>
     <div class="mini-emoji">{{ content ? titleEmojis(content.title) : '·' }}</div>
     <div class="mini-dates">{{ fmtRange(week.lundi, week.vendredi) }}</div>
+    <svg v-if="!isAltView && content?.extraBlocs?.includes('Fil rouge')" class="mini-fil-rouge" viewBox="0 0 16 16" fill="none" title="Projet fil rouge e-shop">
+      <path d="M14 1 C16 5 9 6 8 8 C7 10 0 11 2 15" stroke="#dc2626" stroke-width="1.8" stroke-linecap="round"/>
+    </svg>
     <div class="tip">{{ content ? titleText(content.title) : week.iso }}</div>
   </div>
 </template>

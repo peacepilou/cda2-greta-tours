@@ -3,5 +3,5 @@ import vue from '@vitejs/plugin-vue'
 
 export default defineConfig({
   plugins: [vue()],
-  base: '/cda2-planning/',
+  base: '/cda2-greta-tours/',
 })

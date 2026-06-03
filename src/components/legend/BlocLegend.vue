@@ -1,28 +1,33 @@
 <script setup lang="ts">
 import { blocColor } from '../../constants/colors'
 import type { LegendState } from '../../composables/useLegend'
+import { useCohort } from '../../composables/useCohort'
 
 const props = defineProps<{
   legend: LegendState
 }>()
 
+const { cohort, setCohort } = useCohort()
+
 const MATIERES = [
   'Git', 'JavaScript', 'TypeScript', 'Vision métier', 'IA',
   'Angular', 'CI/CD', 'Java', 'SQL', 'Spring Boot', 'Certification',
+  'Fil rouge',
 ]
 </script>
 
 <template>
-  <span class="legend-key">
+  <button class="legend-cohort-btn" :class="{ active: cohort === 'TP' }" @click="setCohort('TP')">
     <span class="pill pill-tp">TP</span> Temps plein
-  </span>
-  <span class="legend-key">
+  </button>
+  <button class="legend-cohort-btn" :class="{ active: cohort === 'ALT' }" @click="setCohort('ALT')">
     <span class="pill pill-alt">ALT</span> Alternants
-  </span>
+  </button>
   <span class="legend-sep"></span>
 
   <button
     v-for="m in MATIERES"
+    v-show="m !== 'Fil rouge' || cohort === 'TP'"
     :key="m"
     class="chip"
     :class="{ active: legend.isChipActive(m) }"

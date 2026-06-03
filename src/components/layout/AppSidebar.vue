@@ -10,7 +10,7 @@ const { cohort, setCohort } = useCohort()
 const navItems: Array<{ key: ViewMode; label: string }> = [
   { key: 'overview',   label: "Vue d'ensemble" },
   { key: 'compressed', label: 'Agenda' },
-  { key: 'detailed',   label: 'Vue détaillée' },
+  { key: 'detailed',   label: 'Agenda détaillé' },
 ]
 </script>
 

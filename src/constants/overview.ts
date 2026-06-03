@@ -21,50 +21,50 @@ export interface BcDef {
 }
 
 export const BLOCS_BARS: BlocBar[] = [
-  { label: 'Angular',         emoji: '🛡️', hrs: 129, bloc: 'Angular' },
+  { label: 'Angular',         emoji: '🛡️', hrs: 137, bloc: 'Angular' },
+  { label: 'JavaScript',      emoji: '🌼', hrs: 140, bloc: 'JavaScript' },
   { label: 'Spring Boot',     emoji: '🍃', hrs: 105, bloc: 'Spring Boot' },
-  { label: 'CI/CD + Docker',  emoji: '🤖', hrs: 105, bloc: 'CI/CD' },
-  { label: 'Projet + Certif', emoji: '🚀', hrs: 115, bloc: 'Projet' },
-  { label: 'Java',            emoji: '☕', hrs: 70,  bloc: 'Java' },
-  { label: 'JavaScript',      emoji: '🌼', hrs: 70,  bloc: 'JavaScript' },
-  { label: 'Fondamentaux',    emoji: '📐', hrs: 70,  bloc: 'Fondamentaux' },
-  { label: 'Git',             emoji: '🐙', hrs: 70,  bloc: 'Git' },
-  { label: 'SQL',             emoji: '🗄️', hrs: 67,  bloc: 'SQL' },
-  { label: 'TypeScript',      emoji: '🟦', hrs: 56,  bloc: 'TypeScript' },
-  { label: 'Démarrage IA',    emoji: '✨', hrs: 10,  bloc: 'Démarrage' },
-  { label: 'Vision métier',   emoji: '🎯', hrs: 14,  bloc: 'Vision métier' },
+  { label: 'Certification',   emoji: '🎓', hrs: 109, bloc: 'Certification' },
+  { label: 'Vision métier',   emoji: '🎯', hrs: 70,  bloc: 'Vision métier' },
+  { label: 'Java',            emoji: '☕', hrs: 67,  bloc: 'Java' },
+  { label: 'TypeScript',      emoji: '🟦', hrs: 60,  bloc: 'TypeScript' },
+  { label: 'CI/CD + Docker',  emoji: '⚙️', hrs: 35,  bloc: 'CI/CD' },
+  { label: 'SQL',             emoji: '🗄️', hrs: 70,  bloc: 'SQL' },
+  { label: 'Git',             emoji: '🐙', hrs: 35,  bloc: 'Git' },
+  { label: 'IA fondamentaux', emoji: '🤖', hrs: 28,  bloc: 'IA' },
+  { label: 'Démarrage',       emoji: '✨', hrs: 11,  bloc: 'Démarrage' },
 ]
 
-export const TOTAL_HRS = 871
+export const TOTAL_HRS = 872
 
 export const BC_CARDS: BcCard[] = [
   {
     code: 'BC01', pct: 45, hrs: 392, bloc: 'TypeScript',
-    label: 'UI · Composants · Gestion projet',
-    modules: ['Git', 'JS', 'TS', 'Angular', 'Vision métier'],
+    label: 'UI · Front · Composants · Gestion projet',
+    modules: ['JS', 'Git', 'TS', 'Angular', 'Vision métier', 'Figma'],
   },
   {
     code: 'BC02', pct: 35, hrs: 305, bloc: 'Java',
     label: 'Architecture · BDD · Accès données',
-    modules: ['Algo', 'Java', 'SQL', 'Spring Boot', 'JPA'],
+    modules: ['Java', 'SQL', 'NoSQL (concept)', 'Spring Boot', 'JPA'],
   },
   {
-    code: 'BC03', pct: 20, hrs: 174, bloc: 'Alternants',
-    label: 'Tests · CI/CD · Déploiement',
-    modules: ['Git', 'Tests unitaires', 'Docker', 'GitHub Actions', 'VPS'],
+    code: 'BC03', pct: 20, hrs: 175, bloc: 'Alternants',
+    label: 'Tests · CI/CD · Déploiement · Anglais B1',
+    modules: ['Tests unitaires', 'Plan de tests', 'Docker', 'GitHub Actions', 'VPS', 'Anglais certif'],
   },
 ]
 
 export const BC_DEFS: BcDef[] = [
   { code: 'BC01', title: 'BC01 — Développer une application sécurisée', sub: 'UI · Composants métier · Gestion projet' },
-  { code: 'BC02', title: 'BC02 — Concevoir et développer en couches', sub: 'Architecture · BDD SQL/NoSQL · Accès données' },
+  { code: 'BC02', title: 'BC02 — Concevoir et développer en couches', sub: 'Architecture · BDD SQL · NoSQL (concept) · Accès données' },
   { code: 'BC03', title: 'BC03 — Préparer le déploiement', sub: 'Tests · Documentation · CI/CD · DevOps' },
 ]
 
 export const OPEN_QUESTIONS: string[] = [
-  'Contenu de la semaine 23-27 août (alternants en centre)',
-  'Confirmation semaine 13-17 sept (alternants en entreprise ou école ?)',
-  'Date exacte jury alternants (fin sept 2027 à confirmer)',
-  'Constitution des groupes fil rouge (temps plein)',
-  "Documents de cadrage à produire : CDC, backlog, critères d'acceptance, sprint planning, architecture template, README",
+  'Contenu de la semaine 23-27 août 2027 (alternants en centre — S34)',
+  'Confirmation semaine 13-17 sept 2027 (alternants en entreprise ou école — S37)',
+  'Date exacte jury alternants (fin sept 2027 à confirmer — S39b)',
+  'Constitution des groupes fil rouge temps plein — critères de formation des équipes',
+  'Plateforme de certification anglais B1 à choisir (PIX, Cambridge, autre)',
 ]

@@ -9,10 +9,12 @@ import WeekModal from './components/modal/WeekModal.vue'
 import { useLegend } from './composables/useLegend'
 import { useModal } from './composables/useModal'
 import { useNavigation } from './composables/useNavigation'
+import { useCohort } from './composables/useCohort'
 
 document.documentElement.dataset.theme = 'a'
 
-const { currentView, pageMeta } = useNavigation()
+const { currentView, pageMeta, setView } = useNavigation()
+const { cohort, setCohort } = useCohort()
 const legend = useLegend()
 const modal = useModal()
 
@@ -63,5 +65,37 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown))
     >
       <WeekModal :iso="modal.selectedIso.value" @close="modal.close()" />
     </div>
+
+    <nav class="mobile-nav">
+      <button class="mnav-btn" :class="{ active: currentView === 'overview' }" @click="setView('overview')">
+        <svg class="mnav-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6">
+          <rect x="2.5" y="2.5" width="6.5" height="6.5" rx="1.5"/>
+          <rect x="11" y="2.5" width="6.5" height="6.5" rx="1.5"/>
+          <rect x="2.5" y="11" width="6.5" height="6.5" rx="1.5"/>
+          <rect x="11" y="11" width="6.5" height="6.5" rx="1.5"/>
+        </svg>
+        <span>Aperçu</span>
+      </button>
+      <button class="mnav-btn" :class="{ active: currentView === 'compressed' }" @click="setView('compressed')">
+        <svg class="mnav-icon" viewBox="0 0 20 20" fill="currentColor">
+          <circle cx="4" cy="4" r="1.7"/><circle cx="10" cy="4" r="1.7"/><circle cx="16" cy="4" r="1.7"/>
+          <circle cx="4" cy="10" r="1.7"/><circle cx="10" cy="10" r="1.7"/><circle cx="16" cy="10" r="1.7"/>
+          <circle cx="4" cy="16" r="1.7"/><circle cx="10" cy="16" r="1.7"/><circle cx="16" cy="16" r="1.7"/>
+        </svg>
+        <span>Agenda</span>
+      </button>
+      <button class="mnav-btn" :class="{ active: currentView === 'detailed' }" @click="setView('detailed')">
+        <svg class="mnav-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6">
+          <rect x="2.5" y="3" width="15" height="4.2" rx="1.4"/>
+          <rect x="2.5" y="9" width="15" height="4.2" rx="1.4"/>
+          <rect x="2.5" y="15" width="15" height="2.5" rx="1.2"/>
+        </svg>
+        <span>Détail</span>
+      </button>
+      <button class="mnav-btn mnav-cohort" @click="setCohort(cohort === 'TP' ? 'ALT' : 'TP')">
+        <span class="pill" :class="cohort === 'TP' ? 'pill-tp' : 'pill-alt'">{{ cohort }}</span>
+        <span>{{ cohort === 'TP' ? 'Temps plein' : 'Alternant' }}</span>
+      </button>
+    </nav>
   </div>
 </template>

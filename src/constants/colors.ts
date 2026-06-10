@@ -18,6 +18,7 @@ export const BLOC_COLORS: Record<string, string> = {
   'Certification': '#eab308',
   'Alternants':    '#a78bfa',
   'Fil rouge':     '#dc2626',
+  'Conception':   '#0891b2',
 }
 
 export function blocColor(bloc: string): string {
@@ -36,6 +37,7 @@ const BLOC_STATS: Record<string, BlocStats> = {
   'SQL':           { hrs: 70,  pct: 8  },
   'Spring Boot':   { hrs: 105, pct: 12 },
   'CI/CD':         { hrs: 35,  pct: 4  },
+  'Conception':   { hrs: 28,  pct: 3  },
   'Certification': { hrs: 35, pct: 4 },
   'Alternants':    { hrs: 35,  pct: 4  },
   // Legacy blocs kept for backward compatibility

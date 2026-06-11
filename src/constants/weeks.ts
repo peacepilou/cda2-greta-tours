@@ -8,7 +8,7 @@ export const WEEKS: Week[] = [
   { iso: 'S43', lundi: '2026-10-19', vendredi: '2026-10-23', type: 'B', hrs: 35 },
   { iso: 'S44', lundi: '2026-10-26', vendredi: '2026-10-30', type: 'A', hrs: 35 },
   { iso: 'S45', lundi: '2026-11-02', vendredi: '2026-11-06', type: 'B', hrs: 35 },
-  { iso: 'S46', lundi: '2026-11-09', vendredi: '2026-11-13', type: 'A', hrs: 28, special: 'Armistice lun.' },
+  { iso: 'S46', lundi: '2026-11-09', vendredi: '2026-11-13', type: 'A', hrs: 28, special: 'Armistice mer.' },
   { iso: 'S47', lundi: '2026-11-16', vendredi: '2026-11-20', type: 'B', hrs: 35 },
   { iso: 'S48', lundi: '2026-11-23', vendredi: '2026-11-27', type: 'A', hrs: 31.5 },
   { iso: 'S49', lundi: '2026-11-30', vendredi: '2026-12-04', type: 'B', hrs: 28 },

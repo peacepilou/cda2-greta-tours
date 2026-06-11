@@ -31,7 +31,7 @@ const BLOC_DESCRIPTIONS: Record<string, string> = {
   'CI/CD':         'Automatisation du build, des tests et du déploiement — GitHub Actions, Docker Compose, nginx, HTTPS. Clôt la formation en mettant le projet e-shop en production réelle.',
   'Certification': 'Semaines de préparation et passage du titre RNCP37873 niveau 6 — dossier de projet, simulation jury (40min présentation + 45min entretien technique), questionnaire anglais B1.',
   'Conception':    'Fil transversal en 3 passes — use case et invariants (S44-S45), diagramme de classes et MLD (S4-S5), séquence formelle et déploiement (S8, S10). La modélisation revient ancrée sur le contenu technique du moment.',
-  'Fil rouge':     'Semaines où le projet e-shop est le support principal. Commence par la modélisation (S49) et s\'étend jusqu\'au déploiement — ancre chaque notion dans un contexte réel et cumulatif.',
+  'Fil rouge':     'Semaines où le projet e-shop est le support principal. Commence par les maquettes (S45) et s\'étend jusqu\'au déploiement — ancre chaque notion dans un contexte réel et cumulatif.',
 }
 
 const { cohort } = useCohort()

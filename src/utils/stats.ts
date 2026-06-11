@@ -37,15 +37,20 @@ export interface BlocBarStat {
   pct: number
 }
 
-export function blocBars(cohort: Cohort): BlocBarStat[] {
-  const hours = hoursByBloc(cohort)
-  const total = totalHours(cohort)
+/** Blocs primaires dans l'ordre chronologique de première apparition. */
+export function primaryBlocs(cohort: Cohort): string[] {
   const order: string[] = []
   for (const w of cohortWeeks(cohort)) {
     const bloc = CONTENT[w.iso].bloc
     if (!order.includes(bloc)) order.push(bloc)
   }
-  return order.map(bloc => ({
+  return order
+}
+
+export function blocBars(cohort: Cohort): BlocBarStat[] {
+  const hours = hoursByBloc(cohort)
+  const total = totalHours(cohort)
+  return primaryBlocs(cohort).map(bloc => ({
     bloc,
     hrs: hours[bloc],
     pct: round1((hours[bloc] / total) * 100),

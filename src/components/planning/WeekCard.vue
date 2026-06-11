@@ -85,6 +85,13 @@ const IA_LABELS: Record<string, string> = {
         class="badge-bc"
         :class="bc.toLowerCase()"
       >{{ bc }}</span>
+      <span
+        v-for="eb in content?.extraBlocs ?? []"
+        :key="eb"
+        class="wk-extra-dot"
+        :style="{ background: blocColor(eb) }"
+        :title="eb"
+      ></span>
       <span class="presence">
         <span
           v-for="pill in presencePills(week.type)"

@@ -121,9 +121,19 @@ const IA_LABELS: Record<string, string> = {
             </a>
             <div v-if="!content.links.length" class="links-empty">Cours à créer</div>
           </div>
-          <div class="bloc-badge">
-            <span class="dot" :style="{ background: color }"></span>
-            {{ content.bloc }}
+          <div class="bloc-badge-row">
+            <div class="bloc-badge">
+              <span class="dot" :style="{ background: color }"></span>
+              {{ content.bloc }}
+            </div>
+            <div
+              v-for="eb in content.extraBlocs ?? []"
+              :key="eb"
+              class="bloc-badge bloc-badge--extra"
+            >
+              <span class="dot" :style="{ background: blocColor(eb) }"></span>
+              {{ eb }}
+            </div>
           </div>
         </div>
 

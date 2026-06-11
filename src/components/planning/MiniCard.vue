@@ -21,6 +21,7 @@ function presencePills(type: string): Array<[string, string]> {
 }
 
 const color = props.content?.bloc ? blocColor(props.content.bloc) : 'var(--border)'
+const cornerBlocs = (props.content?.extraBlocs ?? []).filter(b => b !== 'Fil rouge')
 </script>
 
 <template>
@@ -74,6 +75,15 @@ const color = props.content?.bloc ? blocColor(props.content.bloc) : 'var(--borde
     <svg v-if="!isAltView && content?.extraBlocs?.includes('Fil rouge')" class="mini-fil-rouge" viewBox="0 0 16 16" fill="none" title="Projet fil rouge e-shop">
       <path d="M14 1 C16 5 9 6 8 8 C7 10 0 11 2 15" stroke="#dc2626" stroke-width="1.8" stroke-linecap="round"/>
     </svg>
+    <span v-if="cornerBlocs.length" class="mini-corner-dots">
+      <span
+        v-for="b in cornerBlocs"
+        :key="b"
+        class="mini-corner-dot"
+        :style="{ background: blocColor(b) }"
+        :title="b"
+      ></span>
+    </span>
     <div class="tip">{{ content ? titleText(content.title) : week.iso }}</div>
   </div>
 </template>

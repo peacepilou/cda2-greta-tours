@@ -1,7 +1,9 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import { blocColor } from '../../constants/colors'
 import type { LegendState } from '../../composables/useLegend'
 import { useCohort } from '../../composables/useCohort'
+import { primaryBlocs, transversalThreads } from '../../utils/stats'
 
 const props = defineProps<{
   legend: LegendState
@@ -9,11 +11,12 @@ const props = defineProps<{
 
 const { cohort, setCohort } = useCohort()
 
-const MATIERES = [
-  'Git', 'JavaScript', 'TypeScript', 'Vision métier', 'IA',
-  'Angular', 'CI/CD', 'Java', 'SQL', 'Spring Boot', 'Certification',
-  'Fil rouge',
-]
+const primaries = computed(() => primaryBlocs(cohort.value))
+const threads = computed(() =>
+  transversalThreads(cohort.value)
+    .map(t => t.name)
+    .filter(name => !primaries.value.includes(name))
+)
 </script>
 
 <template>
@@ -26,8 +29,7 @@ const MATIERES = [
   <span class="legend-sep"></span>
 
   <button
-    v-for="m in MATIERES"
-    v-show="m !== 'Fil rouge' || cohort === 'TP'"
+    v-for="m in primaries"
     :key="m"
     class="chip"
     :class="{ active: legend.isChipActive(m) }"
@@ -37,6 +39,19 @@ const MATIERES = [
     @click.stop="legend.onChipClick(m)"
   >
     <span class="chip-dot"></span>{{ m }}
+  </button>
+
+  <button
+    v-for="t in threads"
+    :key="t"
+    class="chip chip--thread"
+    :class="{ active: legend.isChipActive(t) }"
+    :style="{ '--chip-color': blocColor(t) } as any"
+    @mouseenter="legend.onChipEnter(t)"
+    @mouseleave="legend.onChipLeave()"
+    @click.stop="legend.onChipClick(t)"
+  >
+    <span class="chip-dot"></span>{{ t }}
   </button>
 
   <span class="legend-hint">survol pour isoler · clic pour figer</span>

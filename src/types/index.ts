@@ -25,6 +25,7 @@ export interface WeekContent {
   ia_mode: IaMode
   blocs_cda: string[]
   fondamentaux: string
+  livrable?: string   // livrable nommé du travail autonome (règle B6)
   links: NotionLink[]
 }
 

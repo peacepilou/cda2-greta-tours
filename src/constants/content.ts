@@ -13,6 +13,7 @@ export const CONTENT: Record<string, WeekContent> = {
     ia_mode: 'none',
     blocs_cda: [],
     fondamentaux: 'Posture de développeur : je cherche avant de demander, je lis les erreurs',
+    livrable: 'Checklist « environnement opérationnel » validée en binôme — Terminal, Node, Git, VS Code, comptes GitHub et Notion fonctionnels',
     links: [],
   },
   S40: {
@@ -27,6 +28,7 @@ export const CONTENT: Record<string, WeekContent> = {
     ia_mode: 'solo',
     blocs_cda: ['BC01'],
     fondamentaux: 'JS = interprété, faiblement typé — coercition, NaN, undefined sont des failles par design, pas des bugs',
+    livrable: 'Un fichier d\'exercices par notion (variables, boucles, fonctions), exécutables sans erreur dans la console',
     links: [
       { label: '🌼 JavaScript', url: 'https://satin-truffle-ac4.notion.site/Javascript-1d72ae802e29804596fbe823e86fa5a0' },
       { label: 'Qu\'est-ce que JS ?', url: 'https://www.notion.so/1d72ae802e298050b54df0ccebba21a5' },
@@ -47,6 +49,7 @@ export const CONTENT: Record<string, WeekContent> = {
     ia_mode: 'mixed',
     blocs_cda: ['BC01'],
     fondamentaux: 'Récupération active : se souvenir coûte et consolide — relire le cours ne vaut rien',
+    livrable: 'Katas du repo JS au vert (rouge→vert) + une solution expliquée à l\'oral au débrief',
     links: [
       { label: '🌼 JavaScript', url: 'https://satin-truffle-ac4.notion.site/Javascript-1d72ae802e29804596fbe823e86fa5a0' },
       { label: 'Opérateurs conditionnels', url: 'https://www.notion.so/1d72ae802e2980389e60e63e3e7df3a4' },
@@ -68,6 +71,7 @@ export const CONTENT: Record<string, WeekContent> = {
     ia_mode: 'mixed',
     blocs_cda: ['BC01', 'BC03'],
     fondamentaux: 'Fonctions pures = pas d\'effet de bord = prédictibles · Git = graphe orienté acyclique — force-push sur main = catastrophe',
+    livrable: 'Le code JS de S40-S41 versionné : repo Git avec historique de commits propres',
     links: [
       { label: '🐙 Git & GitHub', url: 'https://www.notion.so/Git-Github-3732ae802e298081a206e7f550efe9d6' },
       { label: '1️⃣ Git local', url: 'https://www.notion.so/3732ae802e298194b9c3dc49d0ceb550' },
@@ -85,6 +89,7 @@ export const CONTENT: Record<string, WeekContent> = {
     ia_mode: 'copilot',
     blocs_cda: ['BC01', 'BC03'],
     fondamentaux: 'Un historique Git propre se lit comme un journal — conventional commits + PR reviews = pratique pro dès le départ',
+    livrable: 'Site perso HTML/CSS déployé sur GitHub Pages, avec PR reviewée par un binôme',
     links: [
       { label: '🐙 Git & GitHub', url: 'https://www.notion.so/Git-Github-3732ae802e298081a206e7f550efe9d6' },
       { label: '1️⃣ Git local', url: 'https://www.notion.so/3732ae802e298194b9c3dc49d0ceb550' },
@@ -103,6 +108,7 @@ export const CONTENT: Record<string, WeekContent> = {
     ia_mode: 'mixed',
     blocs_cda: ['BC01', 'BC02', 'BC03'],
     fondamentaux: 'Un invariant métier = une règle qui ne doit jamais être violée, quelle que soit la couche · Modéliser les préconditions et embranchements dès la conception évite de les découvrir comme bugs en production',
+    livrable: 'CDC e-shop + user stories (préconditions, invariants) + diagramme use case — déposés dans le repo de groupe',
     links: [],
   },
   S45: {
@@ -117,6 +123,7 @@ export const CONTENT: Record<string, WeekContent> = {
     ia_mode: 'mixed',
     blocs_cda: ['BC01', 'BC02'],
     fondamentaux: 'Un wireframe sans ses états d\'erreur est incomplet — les embranchements métier doivent être visibles dans les maquettes avant d\'être codés · XSS : invariant de sécurité — toute donnée utilisateur est hostile',
+    livrable: 'Maquettes Figma des écrans clés (tous états : vide, chargement, erreur, succès) + page XSS corrigée',
     links: [],
   },
   S46: {
@@ -131,6 +138,7 @@ export const CONTENT: Record<string, WeekContent> = {
     ia_mode: 'theory',
     blocs_cda: ['BC01', 'BC02'],
     fondamentaux: 'LLM = prédiction du token suivant — confabulation, biais, drift de contexte, injection de prompt sont des failles structurelles',
+    livrable: 'Fiche réflexe IA personnelle : quand l\'utiliser, quand s\'en méfier — 3 hallucinations provoquées et documentées',
     links: [],
   },
   S47: {
@@ -145,6 +153,7 @@ export const CONTENT: Record<string, WeekContent> = {
     ia_mode: 'mixed',
     blocs_cda: ['BC01'],
     fondamentaux: 'JS est mono-thread — l\'event loop ne bloque pas, mais certaines ops bloquent l\'event loop : les reconnaître évite les freezes prod',
+    livrable: 'Mini-app fetch fonctionnelle sur API publique (squelette complété) + schéma de l\'event loop tracé à la main',
     links: [
       { label: '🌼 JavaScript', url: 'https://satin-truffle-ac4.notion.site/Javascript-1d72ae802e29804596fbe823e86fa5a0' },
       { label: 'Boucles', url: 'https://www.notion.so/1d72ae802e2980b881d6c414ea119ec1' },
@@ -164,6 +173,7 @@ export const CONTENT: Record<string, WeekContent> = {
     ia_mode: 'mixed',
     blocs_cda: ['BC01', 'BC02'],
     fondamentaux: 'TS disparaît au runtime — fausse sécurité si on ne comprend pas cette limite · Bundle = votre code ≠ ce qui arrive au browser',
+    livrable: 'Module async de S47 migré en TS strict — zéro any, compilation sans erreur',
     links: [{ label: '🟦 TypeScript', url: 'https://satin-truffle-ac4.notion.site/Typescript-25d2ae802e2980a79ea5e8a48349fb33' }],
   },
   S49: {
@@ -179,6 +189,7 @@ export const CONTENT: Record<string, WeekContent> = {
     ia_mode: 'copilot',
     blocs_cda: ['BC01', 'BC02'],
     fondamentaux: 'Modéliser avant de coder — les types TS sont la traduction du modèle métier : une interface qui ne correspond à aucun invariant est du bruit',
+    livrable: 'Katas utility types au vert + interfaces TS du modèle e-shop alignées sur les use cases de S44',
     links: [{ label: '🟦 TypeScript', url: 'https://satin-truffle-ac4.notion.site/Typescript-25d2ae802e2980a79ea5e8a48349fb33' }],
   },
   S50: {
@@ -193,6 +204,7 @@ export const CONTENT: Record<string, WeekContent> = {
     ia_mode: 'mixed',
     blocs_cda: ['BC01', 'BC02'],
     fondamentaux: 'SSOT = source unique de vérité — état dupliqué = bugs silencieux · Signals = réactivité fine sans zone.js · Flux unidirectionnel = prédictibilité et debugging',
+    livrable: 'Composant Angular avec @Input/@Output fonctionnel + schéma annoté du pipeline TS→browser',
     links: [
       { label: '🛡️ Angular', url: 'https://satin-truffle-ac4.notion.site/Angular-2092ae802e298032b6e6f8db22315706' },
       { label: 'Les Composants', url: 'https://www.notion.so/2092ae802e298034b8bcff5ca18a33ef' },
@@ -212,6 +224,7 @@ export const CONTENT: Record<string, WeekContent> = {
     ia_mode: 'copilot',
     blocs_cda: ['BC01', 'BC02', 'BC03'],
     fondamentaux: 'Un projet réel n\'est pas un kata — les décisions d\'architecture ont des conséquences : les poser maintenant, pas à mi-parcours',
+    livrable: 'Repo e-shop de groupe initialisé : architecture, conventions, CI template, premier composant mergé',
     links: [
       { label: '🛡️ Angular', url: 'https://satin-truffle-ac4.notion.site/Angular-2092ae802e298032b6e6f8db22315706' },
       { label: 'Signals', url: 'https://www.notion.so/2622ae802e2980d496d3c155dee2b445' },
@@ -228,6 +241,7 @@ export const CONTENT: Record<string, WeekContent> = {
     ia_mode: 'mixed',
     blocs_cda: ['BC01', 'BC02'],
     fondamentaux: 'DI = singleton géré par le framework · Routing client-side ≠ routing serveur (History API, 404 nginx) · HttpClient = abstraction typée sur fetch',
+    livrable: 'Mini-app routée avec guard + formulaire réactif validé + service HttpClient typé',
     links: [
       { label: '🛡️ Angular', url: 'https://satin-truffle-ac4.notion.site/Angular-2092ae802e298032b6e6f8db22315706' },
       { label: 'Le Router', url: 'https://www.notion.so/26f2ae802e298009ac6bdda6ae01dc94' },
@@ -249,6 +263,7 @@ export const CONTENT: Record<string, WeekContent> = {
     ia_mode: 'copilot',
     blocs_cda: ['BC01'],
     fondamentaux: 'Un service @Injectable est un singleton — toute mutation d\'état dans un service affecte tous les composants qui l\'injectent',
+    livrable: 'Sur l\'e-shop : routes, guard, formulaire de connexion et service produits (mock) mergés via PR',
     links: [
       { label: '🛡️ Angular', url: 'https://satin-truffle-ac4.notion.site/Angular-2092ae802e298032b6e6f8db22315706' },
       { label: 'Les Services', url: 'https://www.notion.so/2092ae802e2980b48156f021815221dd' },
@@ -267,6 +282,7 @@ export const CONTENT: Record<string, WeekContent> = {
     ia_mode: 'mixed',
     blocs_cda: ['BC02', 'BC03'],
     fondamentaux: 'Java = compilé, fortement typé — erreur de type à la compilation, pas au runtime · Héritage vs composition — fragile base class problem · Exceptions : early return + exception typée > catch silencieux',
+    livrable: 'Classes Java POO (héritage vs composition) + premier test JUnit vert sur leur propre code',
     links: [
       { label: '☕ Java', url: 'https://satin-truffle-ac4.notion.site/Java-1f82ae802e2980f49405d0b5c5c311c6' },
       { label: 'JDK', url: 'https://www.notion.so/1f82ae802e29806188f1fbc5a483891f' },
@@ -290,6 +306,7 @@ export const CONTENT: Record<string, WeekContent> = {
     ia_mode: 'mixed',
     blocs_cda: ['BC02', 'BC03'],
     fondamentaux: 'Tester via l\'API publique, jamais les méthodes privées · Diagramme de classes = contrat structurel — les invariants y sont lisibles avant même d\'ouvrir le code · un constructeur qui laisse passer un objet invalide est une faille de conception',
+    livrable: 'Katas Streams adaptés au vert + diagramme de classes V1 e-shop avec invariants annotés',
     links: [
       { label: '☕ Java', url: 'https://satin-truffle-ac4.notion.site/Java-1f82ae802e2980f49405d0b5c5c311c6' },
       { label: 'Tableaux & itérations', url: 'https://www.notion.so/1f82ae802e2980769004f379d4443c34' },
@@ -309,6 +326,7 @@ export const CONTENT: Record<string, WeekContent> = {
     ia_mode: 'mixed',
     blocs_cda: ['BC01', 'BC02'],
     fondamentaux: 'Un schéma BDD est une décision d\'architecture — modifier une colonne en prod coûte cher · Injection SQL = faille #1 OWASP · NoSQL = choix selon le cas d\'usage, pas un remplacement',
+    livrable: 'MLD e-shop traduit du diagramme de classes + script SQL avec contraintes (NOT NULL, UNIQUE, FK) exécutable',
     links: [],
   },
   S6: {
@@ -324,6 +342,7 @@ export const CONTENT: Record<string, WeekContent> = {
     ia_mode: 'mixed',
     blocs_cda: ['BC02', 'BC03'],
     fondamentaux: 'SQL Murder Mystery : apprendre en contexte narratif — la motivation est la meilleure charge cognitive',
+    livrable: 'Requêtes complexes au vert sur le schéma e-shop + fiche de lecture Spring (Servlet, IoC) en anglais',
     links: [],
   },
   S7: {
@@ -338,6 +357,7 @@ export const CONTENT: Record<string, WeekContent> = {
     ia_mode: 'mixed',
     blocs_cda: ['BC01', 'BC02', 'BC03'],
     fondamentaux: 'Spring = conteneur IoC — les beans sont gérés par le framework · N+1 query = SELECT dans une boucle = catastrophe en production',
+    livrable: 'API CRUD JPA fonctionnelle + diagramme de séquence du pipeline + script SQL e-shop versionné',
     links: [
       { label: '🍃 Spring Boot', url: 'https://satin-truffle-ac4.notion.site/Spring-Boot-28c2ae802e29802d9edecb8920734da3' },
       { label: 'Introduction au backend', url: 'https://www.notion.so/28d2ae802e29802b9dd8f377f61029ec' },
@@ -358,6 +378,7 @@ export const CONTENT: Record<string, WeekContent> = {
     ia_mode: 'mixed',
     blocs_cda: ['BC02', 'BC03'],
     fondamentaux: 'Plan de tests = contrat de confiance · Diagramme de séquence : chaque fragment alt est un embranchement métier — si tu ne peux pas le dessiner, tu ne l\'as pas compris · Design patterns = vocabulaire partagé pour argumenter une décision d\'architecture · @ExceptionHandler global : 4xx expose le message (safe), 5xx message générique (sécurité)',
+    livrable: 'Couche service structurée sur le squelette fourni + plan de tests e-shop rempli (template)',
     links: [
       { label: '🍃 Spring Boot', url: 'https://satin-truffle-ac4.notion.site/Spring-Boot-28c2ae802e29802d9edecb8920734da3' },
       { label: 'Exposition REST', url: 'https://www.notion.so/28d2ae802e29800ba606db8dc36ea329' },
@@ -379,6 +400,7 @@ export const CONTENT: Record<string, WeekContent> = {
     ia_mode: 'mixed',
     blocs_cda: ['BC02', 'BC03'],
     fondamentaux: 'JWT = claims signés, pas chiffrés — lire le payload avec jwt.io · bcrypt = irréversible par design · Docker = reproductibilité, pas de "ça marche sur mon poste"',
+    livrable: 'Filtre JWT modifié et expliqué ligne à ligne + stack docker-compose lancée en local',
     links: [
       { label: '🍃 Spring Boot', url: 'https://satin-truffle-ac4.notion.site/Spring-Boot-28c2ae802e29802d9edecb8920734da3' },
       { label: 'Authentification JWT', url: 'https://www.notion.so/2952ae802e29801987a2c63850269da7' },
@@ -399,6 +421,7 @@ export const CONTENT: Record<string, WeekContent> = {
     ia_mode: 'mixed',
     blocs_cda: ['BC01', 'BC02', 'BC03'],
     fondamentaux: 'Un pipeline = automatisation de la confiance — drift, secrets en clair, déploiement manuel = les 3 failles classiques de la mise en prod',
+    livrable: 'Pipeline GitHub Actions vert sur l\'e-shop + diagramme de déploiement (artefact du dossier CDA)',
     links: [
       { label: '🤖 CI-CD', url: 'https://satin-truffle-ac4.notion.site/CI-CD-2862ae802e298087b982f578be8782b7' },
       { label: 'CI + Angular', url: 'https://satin-truffle-ac4.notion.site/CI-Angular-2862ae802e2980389270d94059214d69' },
@@ -421,6 +444,7 @@ export const CONTENT: Record<string, WeekContent> = {
     ia_mode: 'none',
     blocs_cda: ['BC01', 'BC02', 'BC03'],
     fondamentaux: 'Le stage révèle les vraies lacunes — ce diagnostic oriente les 3 semaines de préparation',
+    livrable: 'Fiche auto-bilan de stage (pratiqué / oublié / surpris) — input direct de S22',
     links: [],
   },
   S22: {
@@ -435,6 +459,7 @@ export const CONTENT: Record<string, WeekContent> = {
     ia_mode: 'copilot',
     blocs_cda: ['BC01', 'BC02', 'BC03'],
     fondamentaux: 'Rigueur documentaire : un dossier bien structuré raconte une histoire de montée en compétences — pas une liste de tâches',
+    livrable: 'Dossier de projet relu en croisé : mapping RNCP par CCP complété, structure 40-60 pages validée',
     links: [],
   },
   S23: {
@@ -449,6 +474,7 @@ export const CONTENT: Record<string, WeekContent> = {
     ia_mode: 'copilot',
     blocs_cda: ['BC01', 'BC02', 'BC03'],
     fondamentaux: 'Posture professionnelle : argumenter une décision d\'architecture vaut mieux que réciter une définition',
+    livrable: 'Grille de feedback jury remplie par le binôme + liste des points faibles à retravailler',
     links: [],
   },
   S24: {
@@ -490,6 +516,7 @@ export const CONTENT: Record<string, WeekContent> = {
     ia_mode: 'copilot',
     blocs_cda: ['BC01', 'BC02', 'BC03'],
     fondamentaux: 'Synthèse, rigueur documentaire',
+    livrable: 'Dossier annoté : zones faibles identifiées + corrections planifiées',
     links: [],
   },
   S37: {
@@ -517,6 +544,7 @@ export const CONTENT: Record<string, WeekContent> = {
     ia_mode: 'copilot',
     blocs_cda: ['BC01', 'BC02', 'BC03'],
     fondamentaux: 'Argumentation technique, posture pro',
+    livrable: 'Grille RNCP d\'auto-évaluation remplie + un passage oral complet chronométré avec feedback',
     links: [],
   },
   S39b: {

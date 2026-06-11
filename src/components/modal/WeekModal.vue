@@ -90,6 +90,10 @@ const IA_LABELS: Record<string, string> = {
           <ul class="notion-list">
             <li v-for="(n, i) in content.notions" :key="i">{{ n }}</li>
           </ul>
+          <div v-if="content.livrable" class="modal-livrable">
+            <div class="modal-livrable-main">📦 <strong>Livrable :</strong> {{ content.livrable }}</div>
+            <div class="modal-livrable-debrief">🗣️ Débrief collectif le lendemain (10-15 min)</div>
+          </div>
           <div class="col-label" style="margin-top:4px">Ressources Notion</div>
           <div class="links">
             <a

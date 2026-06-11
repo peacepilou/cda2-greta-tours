@@ -3,7 +3,7 @@ import { computed } from 'vue'
 import { blocColor } from '../../constants/colors'
 import type { LegendState } from '../../composables/useLegend'
 import { useCohort } from '../../composables/useCohort'
-import { primaryBlocs, transversalThreads } from '../../utils/stats'
+import { primaryBlocs, pureThreads } from '../../utils/stats'
 
 const props = defineProps<{
   legend: LegendState
@@ -12,11 +12,7 @@ const props = defineProps<{
 const { cohort, setCohort } = useCohort()
 
 const primaries = computed(() => primaryBlocs(cohort.value))
-const threads = computed(() =>
-  transversalThreads(cohort.value)
-    .map(t => t.name)
-    .filter(name => !primaries.value.includes(name))
-)
+const threads = computed(() => pureThreads(cohort.value).map(t => t.name))
 </script>
 
 <template>

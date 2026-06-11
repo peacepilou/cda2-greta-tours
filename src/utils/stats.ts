@@ -100,6 +100,12 @@ export function transversalThreads(cohort: Cohort): ThreadStat[] {
   return [...map.entries()].map(([name, weeks]) => ({ name, weeks, count: weeks.length }))
 }
 
+// Fils transversaux purs : exclut les blocs à la fois extraBlocs ponctuels ET blocs primaires (Git, Spring Boot, CI/CD).
+export function pureThreads(cohort: Cohort): ThreadStat[] {
+  const primaries = primaryBlocs(cohort)
+  return transversalThreads(cohort).filter(t => !primaries.includes(t.name))
+}
+
 export function blocWeeks(bloc: string, cohort: Cohort): string[] {
   return cohortWeeks(cohort)
     .filter(w => {

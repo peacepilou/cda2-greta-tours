@@ -5,7 +5,7 @@ import { blocColor } from '../../constants/colors'
 import { BLOC_BAR_META } from '../../constants/overview'
 import { useLegend } from '../../composables/useLegend'
 import { useCohort } from '../../composables/useCohort'
-import { blocBars, fmtHours, primaryBlocs, transversalThreads } from '../../utils/stats'
+import { blocBars, fmtHours, pureThreads } from '../../utils/stats'
 
 const emit = defineEmits<{ selectBloc: [bloc: string] }>()
 const legend = useLegend()
@@ -19,10 +19,7 @@ const bars = computed(() =>
   }))
 )
 
-const threads = computed(() => {
-  const primaries = primaryBlocs(cohort.value)
-  return transversalThreads(cohort.value).filter(t => !primaries.includes(t.name))
-})
+const threads = computed(() => pureThreads(cohort.value))
 
 function handleClick(bloc: string) {
   legend.onChipClick(bloc)

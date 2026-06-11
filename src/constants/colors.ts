@@ -1,5 +1,3 @@
-import type { BlocStats } from '../types'
-
 export const BLOC_COLORS: Record<string, string> = {
   'Démarrage':     '#64748b',
   'Fondamentaux':  '#a855f7',
@@ -23,31 +21,6 @@ export const BLOC_COLORS: Record<string, string> = {
 
 export function blocColor(bloc: string): string {
   return BLOC_COLORS[bloc] ?? '#64748b'
-}
-
-const BLOC_STATS: Record<string, BlocStats> = {
-  'Démarrage':     { hrs: 11,  pct: 1  },
-  'JavaScript':    { hrs: 140, pct: 16 },
-  'Git':           { hrs: 35,  pct: 4  },
-  'Vision métier': { hrs: 70,  pct: 8  },
-  'IA':            { hrs: 28,  pct: 3  },
-  'TypeScript':    { hrs: 60,  pct: 7  },
-  'Angular':       { hrs: 137, pct: 16 },
-  'Java':          { hrs: 67,  pct: 8  },
-  'SQL':           { hrs: 70,  pct: 8  },
-  'Spring Boot':   { hrs: 105, pct: 12 },
-  'CI/CD':         { hrs: 35,  pct: 4  },
-  'Conception':   { hrs: 28,  pct: 3  },
-  'Certification': { hrs: 35, pct: 4 },
-  'Alternants':    { hrs: 35,  pct: 4  },
-  // Legacy blocs kept for backward compatibility
-  'Fondamentaux':  { hrs: 70,  pct: 8  },
-  'Java / SQL':    { hrs: 70,  pct: 8  },
-  'Projet':        { hrs: 115, pct: 13 },
-}
-
-export function getBlocStats(bloc: string): BlocStats | null {
-  return BLOC_STATS[bloc] ?? null
 }
 
 // Keep legacy export for backward compatibility

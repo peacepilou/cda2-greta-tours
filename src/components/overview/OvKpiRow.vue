@@ -1,6 +1,11 @@
 <script setup lang="ts">
 import { useCohort } from '../../composables/useCohort'
+import { totalHours, fmtHours } from '../../utils/stats'
+
 const { isALT } = useCohort()
+
+const tpPlanned = fmtHours(totalHours('TP'))
+const altPlanned = fmtHours(totalHours('ALT'))
 </script>
 
 <template>
@@ -8,12 +13,12 @@ const { isALT } = useCohort()
     <div class="kpi" v-if="!isALT">
       <div class="kpi-label">Volume centre</div>
       <div class="kpi-value">871,5<span class="u">h</span></div>
-      <div class="kpi-note">En centre · formation complète</div>
+      <div class="kpi-note">Conventionnées · {{ tpPlanned }}h planifiées</div>
     </div>
     <div class="kpi" v-else>
       <div class="kpi-label">Volume total</div>
       <div class="kpi-value">868<span class="u">h</span></div>
-      <div class="kpi-note">518h centre · + 350h entreprise</div>
+      <div class="kpi-note">518h centre conventionnées ({{ altPlanned }}h planifiées) + 350h entreprise</div>
     </div>
 
     <div class="kpi">

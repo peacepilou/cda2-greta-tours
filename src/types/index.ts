@@ -34,9 +34,4 @@ export interface BlocColor {
   border: string
 }
 
-export interface BlocStats {
-  hrs: number
-  pct: number
-}
-
 export type ViewMode = 'overview' | 'compressed' | 'detailed'

@@ -2,8 +2,10 @@
 import { computed } from 'vue'
 import { WEEKS } from '../../constants/weeks'
 import { CONTENT } from '../../constants/content'
-import { blocColor, getBlocStats } from '../../constants/colors'
+import { blocColor } from '../../constants/colors'
 import { titleEmojis, titleText, fmtRange } from '../../utils/dates'
+import { blocHours, fmtHours } from '../../utils/stats'
+import { useCohort } from '../../composables/useCohort'
 
 const props = defineProps<{ bloc: string | null }>()
 const emit = defineEmits<{ close: [] }>()
@@ -31,8 +33,10 @@ const BLOC_DESCRIPTIONS: Record<string, string> = {
   'Fil rouge':     'Semaines où le projet e-shop est le support principal. Commence par la modélisation (S49) et s\'étend jusqu\'au déploiement — ancre chaque notion dans un contexte réel et cumulatif.',
 }
 
+const { cohort } = useCohort()
+
 const color = computed(() => props.bloc ? blocColor(props.bloc) : 'var(--accent)')
-const stats = computed(() => props.bloc ? getBlocStats(props.bloc) : null)
+const stats = computed(() => props.bloc ? blocHours(props.bloc, cohort.value) : null)
 const description = computed(() => props.bloc ? (BLOC_DESCRIPTIONS[props.bloc] ?? '') : '')
 
 const weeks = computed(() => {
@@ -54,7 +58,10 @@ const weeks = computed(() => {
       <div class="dialog-head-info">
         <div class="dialog-title">{{ bloc }}</div>
         <div class="dialog-dates" v-if="stats">
-          {{ weeks.length }} sem. · {{ stats.hrs }}h · {{ stats.pct }}% de la formation
+          {{ weeks.length }} sem. · {{ fmtHours(stats.hrs) }}h · {{ stats.pct }}% de la formation
+        </div>
+        <div class="dialog-dates" v-else>
+          {{ weeks.length }} semaines porteuses
         </div>
       </div>
       <button class="dialog-close" @click="emit('close')">✕</button>

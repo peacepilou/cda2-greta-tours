@@ -2,9 +2,11 @@
 import { computed } from 'vue'
 import { WEEKS } from '../../constants/weeks'
 import { CONTENT } from '../../constants/content'
-import { blocColor, getBlocStats } from '../../constants/colors'
+import { blocColor } from '../../constants/colors'
 import { BC_DEFS } from '../../constants/overview'
 import { fmtRange } from '../../utils/dates'
+import { blocHours, blocWeeks, fmtHours } from '../../utils/stats'
+import { useCohort } from '../../composables/useCohort'
 
 const props = defineProps<{
   iso: string | null
@@ -31,9 +33,16 @@ const dateStr = computed(() => {
   return week.value.hrs ? `${range} · ${week.value.hrs}h` : range
 })
 
+const { cohort } = useCohort()
+
 const stats = computed(() => {
   if (!content.value?.bloc) return null
-  return getBlocStats(content.value.bloc)
+  return blocHours(content.value.bloc, cohort.value)
+})
+
+const carrierWeeksCount = computed(() => {
+  if (!content.value?.bloc) return 0
+  return blocWeeks(content.value.bloc, cohort.value).length
 })
 
 const IA_LABELS: Record<string, string> = {
@@ -57,7 +66,10 @@ const IA_LABELS: Record<string, string> = {
           <span class="track">
             <span class="fill" :style="{ width: stats.pct + '%', background: color }"></span>
           </span>
-          <span class="lbl">{{ stats.hrs }}h · {{ stats.pct }}% de la formation</span>
+          <span class="lbl">{{ fmtHours(stats.hrs) }}h · {{ stats.pct }}% de la formation</span>
+        </div>
+        <div v-else-if="carrierWeeksCount" class="dialog-statbar">
+          <span class="lbl">{{ carrierWeeksCount }} semaines porteuses</span>
         </div>
       </div>
       <button class="dialog-close" aria-label="Fermer" @click="emit('close')">✕</button>

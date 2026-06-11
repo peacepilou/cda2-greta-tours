@@ -1,14 +1,10 @@
-export interface BlocBar {
+export interface BlocBarMeta {
   label: string
   emoji: string
-  hrs: number
-  bloc: string
 }
 
 export interface BcCard {
   code: string
-  pct: number
-  hrs: number
   bloc: string
   label: string
   modules: string[]
@@ -20,35 +16,36 @@ export interface BcDef {
   sub: string
 }
 
-export const BLOCS_BARS: BlocBar[] = [
-  { label: 'JavaScript',      emoji: '🌼', hrs: 140, bloc: 'JavaScript' },
-  { label: 'Git',             emoji: '🐙', hrs: 35,  bloc: 'Git' },
-  { label: 'Vision métier',   emoji: '🎯', hrs: 70,  bloc: 'Vision métier' },
-  { label: 'IA fondamentaux', emoji: '🤖', hrs: 28,  bloc: 'IA' },
-  { label: 'TypeScript',      emoji: '🟦', hrs: 60,  bloc: 'TypeScript' },
-  { label: 'Angular',         emoji: '🛡️', hrs: 137, bloc: 'Angular' },
-  { label: 'Java',            emoji: '☕', hrs: 67,  bloc: 'Java' },
-  { label: 'SQL',             emoji: '🗄️', hrs: 70,  bloc: 'SQL' },
-  { label: 'Spring Boot',     emoji: '🍃', hrs: 105, bloc: 'Spring Boot' },
-  { label: 'CI/CD + Docker',  emoji: '⚙️', hrs: 35,  bloc: 'CI/CD' },
-  { label: 'Certification',   emoji: '🎓', hrs: 35,  bloc: 'Certification' },
-]
-
-export const TOTAL_HRS = 782
+// Habillage des barres de répartition — les heures viennent de utils/stats.ts
+export const BLOC_BAR_META: Record<string, BlocBarMeta> = {
+  'Démarrage':     { label: 'Démarrage',       emoji: '🚀' },
+  'JavaScript':    { label: 'JavaScript',      emoji: '🌼' },
+  'Git':           { label: 'Git',             emoji: '🐙' },
+  'Vision métier': { label: 'Vision métier',   emoji: '🎯' },
+  'IA':            { label: 'IA fondamentaux', emoji: '🤖' },
+  'TypeScript':    { label: 'TypeScript',      emoji: '🟦' },
+  'Angular':       { label: 'Angular',         emoji: '🛡️' },
+  'Java':          { label: 'Java',            emoji: '☕' },
+  'SQL':           { label: 'SQL',             emoji: '🗄️' },
+  'Spring Boot':   { label: 'Spring Boot',     emoji: '🍃' },
+  'CI/CD':         { label: 'CI/CD + Docker',  emoji: '⚙️' },
+  'Certification': { label: 'Certification',   emoji: '🎓' },
+  'Alternants':    { label: 'Alternants',      emoji: '🧑‍💼' },
+}
 
 export const BC_CARDS: BcCard[] = [
   {
-    code: 'BC01', pct: 45, hrs: 392, bloc: 'TypeScript',
+    code: 'BC01', bloc: 'TypeScript',
     label: 'UI · Front · Composants · Gestion projet',
     modules: ['JS', 'Git', 'TS', 'Angular', 'Vision métier', 'Figma'],
   },
   {
-    code: 'BC02', pct: 35, hrs: 305, bloc: 'Java',
+    code: 'BC02', bloc: 'Java',
     label: 'Architecture · BDD · Accès données',
     modules: ['Java', 'SQL', 'NoSQL (concept)', 'Spring Boot', 'JPA'],
   },
   {
-    code: 'BC03', pct: 20, hrs: 175, bloc: 'Alternants',
+    code: 'BC03', bloc: 'Alternants',
     label: 'Tests · CI/CD · Déploiement · Anglais B1',
     modules: ['Tests unitaires', 'Plan de tests', 'Docker', 'GitHub Actions', 'VPS', 'Anglais certif'],
   },

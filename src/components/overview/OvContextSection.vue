@@ -1,5 +1,9 @@
 <script setup lang="ts">
 import OvSection from './OvSection.vue'
+import { totalHours, fmtHours } from '../../utils/stats'
+
+const tpPlanned = fmtHours(totalHours('TP'))
+const altPlanned = fmtHours(totalHours('ALT'))
 </script>
 
 <template>
@@ -9,7 +13,7 @@ import OvSection from './OvSection.vue'
         <div class="card-head"><span class="tag" style="background:var(--accent)"></span>La formation</div>
         <ul class="list">
           <li>RNCP37873 — Niveau 6 — Concepteur Développeur d'Application</li>
-          <li><strong>TP</strong> : 871,5h en centre, pas d'entreprise — <strong>ALT</strong> : 518h centre + 350h entreprise</li>
+          <li><strong>TP</strong> : 871,5h conventionnées · {{ tpPlanned }}h planifiées — <strong>ALT</strong> : 518h centre conventionnées ({{ altPlanned }}h planifiées) + 350h entreprise</li>
           <li>Cohorte mixte <strong>temps plein + alternants</strong> — rythme asymétrique</li>
           <li>Alternants présents <strong>1 semaine sur 2</strong> → nouvelles notions uniquement lors de leur présence</li>
           <li>Démarrage 24 sept 2026 · Certif TP 14 juin 2027 · Certif ALT fin sept 2027 (à confirmer)</li>

@@ -29,9 +29,4 @@ export interface WeekContent {
   links: NotionLink[]
 }
 
-export interface BlocColor {
-  bg: string
-  border: string
-}
-
 export type ViewMode = 'overview' | 'compressed' | 'detailed'

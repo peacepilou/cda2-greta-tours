@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { Week, WeekContent } from '../../types'
 import { blocColor } from '../../constants/colors'
-import { fmtRange, titleEmoji, titleEmojis, titleText } from '../../utils/dates'
+import { fmtRange, titleEmojis, titleText } from '../../utils/dates'
 
 const props = defineProps<{
   week: Week

@@ -22,9 +22,3 @@ export const BLOC_COLORS: Record<string, string> = {
 export function blocColor(bloc: string): string {
   return BLOC_COLORS[bloc] ?? '#64748b'
 }
-
-// Keep legacy export for backward compatibility
-export function getColor(bloc: string): { bg: string; border: string } {
-  const color = blocColor(bloc)
-  return { bg: color, border: color }
-}

@@ -4,7 +4,7 @@ import { WEEKS } from '../../constants/weeks'
 import { CONTENT } from '../../constants/content'
 import { blocColor } from '../../constants/colors'
 import { titleEmojis, titleText, fmtRange } from '../../utils/dates'
-import { blocHours, fmtHours } from '../../utils/stats'
+import { blocHours, blocWeeks, fmtHours } from '../../utils/stats'
 import { useCohort } from '../../composables/useCohort'
 
 const props = defineProps<{ bloc: string | null }>()
@@ -42,13 +42,8 @@ const description = computed(() => props.bloc ? (BLOC_DESCRIPTIONS[props.bloc] ?
 
 const weeks = computed(() => {
   if (!props.bloc) return []
-  return WEEKS
-    .filter(w => {
-      const c = CONTENT[w.iso]
-      if (!c) return false
-      return c.bloc === props.bloc || c.extraBlocs?.includes(props.bloc!)
-    })
-    .map(w => ({ week: w, content: CONTENT[w.iso] }))
+  return blocWeeks(props.bloc, cohort.value)
+    .map(iso => ({ week: WEEKS.find(w => w.iso === iso)!, content: CONTENT[iso] }))
 })
 </script>
 
@@ -62,7 +57,7 @@ const weeks = computed(() => {
           {{ weeks.length }} sem. · {{ fmtHours(stats.hrs) }}h · {{ stats.pct }}% de la formation
         </div>
         <div class="dialog-dates" v-else>
-          {{ weeks.length }} semaines porteuses
+          {{ weeks.length }} {{ weeks.length > 1 ? 'semaines porteuses' : 'semaine porteuse' }}
         </div>
       </div>
       <button class="dialog-close" @click="emit('close')">✕</button>

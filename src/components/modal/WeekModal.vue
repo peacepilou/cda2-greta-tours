@@ -69,7 +69,7 @@ const IA_LABELS: Record<string, string> = {
           <span class="lbl">{{ fmtHours(stats.hrs) }}h · {{ stats.pct }}% de la formation</span>
         </div>
         <div v-else-if="carrierWeeksCount" class="dialog-statbar">
-          <span class="lbl">{{ carrierWeeksCount }} semaines porteuses</span>
+          <span class="lbl">{{ carrierWeeksCount }} {{ carrierWeeksCount > 1 ? 'semaines porteuses' : 'semaine porteuse' }}</span>
         </div>
       </div>
       <button class="dialog-close" aria-label="Fermer" @click="emit('close')">✕</button>

@@ -89,6 +89,13 @@ export interface ThreadStat {
   count: number
 }
 
+// Le fil rouge est un projet temps plein ; les alternants présentent leur projet entreprise/portfolio.
+const TP_ONLY_THREADS = ['Fil rouge']
+
+export function isThreadVisible(name: string, cohort: Cohort): boolean {
+  return cohort === 'TP' || !TP_ONLY_THREADS.includes(name)
+}
+
 export function transversalThreads(cohort: Cohort): ThreadStat[] {
   const map = new Map<string, string[]>()
   for (const w of cohortWeeks(cohort)) {
@@ -103,7 +110,9 @@ export function transversalThreads(cohort: Cohort): ThreadStat[] {
 // Fils transversaux purs : exclut les blocs à la fois extraBlocs ponctuels ET blocs primaires (Git, Spring Boot, CI/CD).
 export function pureThreads(cohort: Cohort): ThreadStat[] {
   const primaries = primaryBlocs(cohort)
-  return transversalThreads(cohort).filter(t => !primaries.includes(t.name))
+  return transversalThreads(cohort).filter(
+    t => !primaries.includes(t.name) && isThreadVisible(t.name, cohort)
+  )
 }
 
 export function blocWeeks(bloc: string, cohort: Cohort): string[] {

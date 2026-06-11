@@ -5,7 +5,7 @@ import { CONTENT } from '../../constants/content'
 import { blocColor } from '../../constants/colors'
 import { BC_DEFS } from '../../constants/overview'
 import { fmtRange } from '../../utils/dates'
-import { blocHours, blocWeeks, fmtHours } from '../../utils/stats'
+import { blocHours, blocWeeks, fmtHours, isThreadVisible } from '../../utils/stats'
 import { useCohort } from '../../composables/useCohort'
 
 const props = defineProps<{
@@ -39,6 +39,10 @@ const stats = computed(() => {
   if (!content.value?.bloc) return null
   return blocHours(content.value.bloc, cohort.value)
 })
+
+const visibleExtraBlocs = computed(() =>
+  (content.value?.extraBlocs ?? []).filter(eb => isThreadVisible(eb, cohort.value))
+)
 
 const carrierWeeksCount = computed(() => {
   if (!content.value?.bloc) return 0
@@ -127,7 +131,7 @@ const IA_LABELS: Record<string, string> = {
               {{ content.bloc }}
             </div>
             <div
-              v-for="eb in content.extraBlocs ?? []"
+              v-for="eb in visibleExtraBlocs"
               :key="eb"
               class="bloc-badge bloc-badge--extra"
             >

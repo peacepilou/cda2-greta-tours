@@ -1,7 +1,10 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import type { Week, WeekContent } from '../../types'
 import { blocColor } from '../../constants/colors'
 import { fmtRange, titleEmojis, titleText } from '../../utils/dates'
+import { isThreadVisible } from '../../utils/stats'
+import { useCohort } from '../../composables/useCohort'
 
 const props = defineProps<{
   week: Week
@@ -17,6 +20,12 @@ function presencePills(type: string): Array<[string, string]> {
   if (type === 'ALT') return [['pill-alt', 'ALT']]
   return []
 }
+
+const { cohort } = useCohort()
+
+const visibleExtraBlocs = computed(() =>
+  (props.content?.extraBlocs ?? []).filter(eb => isThreadVisible(eb, cohort.value))
+)
 
 const color = props.content?.bloc ? blocColor(props.content.bloc) : 'var(--border)'
 const isPartial = props.week.hrs < 35 && props.week.hrs > 0
@@ -86,7 +95,7 @@ const IA_LABELS: Record<string, string> = {
         :class="bc.toLowerCase()"
       >{{ bc }}</span>
       <span
-        v-for="eb in content?.extraBlocs ?? []"
+        v-for="eb in visibleExtraBlocs"
         :key="eb"
         class="wk-extra-dot"
         :style="{ background: blocColor(eb) }"

@@ -106,9 +106,23 @@ Chaque recours à l'exception est **listé nommément ci-dessous** (traçabilit�
 
 ## F. Questions ouvertes (héritées échange 09 — NE PAS trancher dans la revue, signaler si une semaine y touche)
 
-1. Soft skills 50h + auto-formation 150h non réparties.
+1. Soft skills 50h : politique de placement définie (section G), calendrier formateur à obtenir · auto-formation 150h : toujours non formalisée.
 2. Contenu S34 (retour centre alternants, 23–27 août) — à définir.
 3. S37 (alternants entreprise, 13–17 sept) — à confirmer.
 4. Date exacte certif alternants.
 5. Constitution des groupes fil rouge.
 6. Templates docs de cadrage (CDC, user stories, acceptance, sprint, archi, README).
+
+---
+
+## G. Prélèvement soft skills (50h, formateur externe)
+
+50h de soft skills sont dispensées par un autre formateur À L'INTÉRIEUR des semaines existantes (pas de semaines ajoutées). Ces heures sortent du temps de contenu technique : sur 864,5h planifiées TP (chiffre au 2026-06, recalculé par le dashboard), ~815h restent pour le contenu du formateur principal.
+
+**Règles de placement (à négocier avec le formateur soft skills avant septembre) :**
+1. Prioritairement en **semaines B** (renforcement — élastiques) plutôt qu'en semaines A (introduction de concepts — déjà denses).
+2. **Jamais** dans : S46 (4 jours, Armistice), S9 (semaine la plus chargée du planning), S44 et S7 (A les plus denses), ni les semaines écourtées (<35h).
+3. Cadence cible : 1h30-2h/semaine active dispersée, OU demi-journées concentrées en semaines B.
+4. Le débrief B6 du matin (10-15 min) reste sacré — les soft skills ne le remplacent pas.
+
+Tant que le calendrier du formateur n'est pas connu, ce prélèvement est une provision, pas un planning.

@@ -13,7 +13,7 @@ const altPlanned = fmtHours(totalHours('ALT'))
         <div class="card-head"><span class="tag" style="background:var(--accent)"></span>La formation</div>
         <ul class="list">
           <li>RNCP37873 — Niveau 6 — Concepteur Développeur d'Application</li>
-          <li><strong>TP</strong> : 871,5h conventionnées · {{ tpPlanned }}h planifiées — <strong>ALT</strong> : 518h centre conventionnées ({{ altPlanned }}h planifiées) + 350h entreprise</li>
+          <li><strong>TP</strong> : 871,5h conventionnées · {{ tpPlanned }}h planifiées, dont ~50h soft skills (formateur dédié) — <strong>ALT</strong> : 518h centre conventionnées ({{ altPlanned }}h planifiées) + 350h entreprise</li>
           <li>Cohorte mixte <strong>temps plein + alternants</strong> — rythme asymétrique</li>
           <li>Alternants présents <strong>1 semaine sur 2</strong> → nouvelles notions uniquement lors de leur présence</li>
           <li>Démarrage 24 sept 2026 · Certif TP 14 juin 2027 · Certif ALT fin sept 2027 (à confirmer)</li>

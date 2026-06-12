@@ -9,11 +9,12 @@ export interface PrepModule {
   sequences: string[]
   livrable: string
   link: NotionLink
+  bonus?: boolean
 }
 
 export const PREP_FRAMING = {
   period: 'Juillet → septembre 2026 · à ton rythme',
-  volume: '25 à 30h étalées sur l\'été — mieux vaut 1h régulière qu\'un week-end marathon',
+  volume: 'Environ 30h étalées sur l\'été (+ un bonus JS si l\'élan te porte) — mieux vaut 1h régulière qu\'un week-end marathon',
   promesse: 'Aucun prérequis. On part de zéro, et c\'est très bien comme ça.',
   regleIA: 'L\'IA peut t\'expliquer une erreur ou un concept. Elle n\'écrit pas ta page à ta place — tu poses ici les fondations de ton raisonnement.',
   filRouge: 'Le fil rouge de l\'été : ta page perso. Construite en HTML, stylée en CSS — c\'est elle que tu déploieras sur Internet en semaine Git (S43). Ce que tu construis cet été a une suite.',
@@ -35,6 +36,22 @@ export const PREP_MODULES: PrepModule[] = [
     ],
     livrable: 'L\'arborescence de ta future page perso créée entièrement au clavier + ta cheatsheet des 15 commandes que tu utilises vraiment',
     link: { label: '💻 Le Terminal', url: 'https://www.notion.so/37d2ae802e29814ea580e35be5867d52' },
+  },
+  {
+    key: 'pseudocode',
+    emoji: '🧠',
+    title: 'Pseudo-code & raisonnement',
+    hours: '~4h',
+    pourquoi: 'Le code n\'est que la traduction d\'une pensée claire. Décomposer un problème en étapes — ça s\'entraîne sans ordinateur, un carnet suffit.',
+    sequences: [
+      'Décomposer : un problème → des étapes ordonnées — la recette de cuisine comme premier algorithme',
+      'Les briques logiques : SI/SINON, TANT QUE, POUR CHAQUE — en français, sans syntaxe',
+      'Variables et états : suivre ce que « la machine » retient, ligne par ligne, à la main',
+      'Katas papier : plus grand nombre d\'une liste, compter les voyelles, mot le plus long',
+      'Relecture croisée : ton algorithme lu par quelqu\'un d\'autre — s\'il bute, c\'est l\'algo qui manque de clarté',
+    ],
+    livrable: '5 mini-algorithmes écrits en pseudo-code (carnet ou fichier texte), dont au moins un relu et compris par quelqu\'un d\'autre',
+    link: { label: '🧠 Cours Pseudo-code (Notion)', url: 'https://www.notion.so/37d2ae802e2981d3b307f125a652d837' },
   },
   {
     key: 'html',
@@ -70,10 +87,26 @@ export const PREP_MODULES: PrepModule[] = [
     livrable: 'Ta page perso stylée et responsive : lisible sur ordinateur ET sur ton téléphone',
     link: { label: '🎨 CSS', url: 'https://www.notion.so/37d2ae802e298139beb8d8c5573e31c9' },
   },
+  {
+    key: 'js',
+    emoji: '🌼',
+    title: 'JavaScript',
+    hours: '~6h',
+    pourquoi: 'Si HTML et CSS sont digérés et qu\'il te reste de l\'été : un avant-goût du premier langage de la formation. Pas obligatoire — septembre commence par lui de toute façon.',
+    sequences: [
+      'Qu\'est-ce que JavaScript — le langage qui rend les pages vivantes',
+      'Variables et types de données — dans la console du navigateur',
+      'Conditions if/else : ton pseudo-code devient du vrai code',
+      'Trois petits scripts exécutés dans la console',
+    ],
+    livrable: 'Trois scripts exécutés dans la console du navigateur — et la fierté de lire du vrai code sans paniquer',
+    link: { label: '🌼 Cours JavaScript (Notion)', url: 'https://satin-truffle-ac4.notion.site/Javascript-1d72ae802e29804596fbe823e86fa5a0' },
+    bonus: true,
+  },
 ]
 
 export const PREP_PARENT_LINK: NotionLink = {
-  label: '🏖️ Cours de l\'été (Notion)',
+  label: '📚 Tous les cours de l\'été — sur Notion',
   url: 'https://www.notion.so/37d2ae802e2981fb97d2f8c73044cbb1',
 }
 
@@ -81,6 +114,7 @@ export const PREP_CHECKLIST_TITLE = 'Tu es prêt pour septembre si…'
 
 export const PREP_CHECKLIST: string[] = [
   'Tu navigues dans tes dossiers au clavier, sans toucher la souris',
+  'Tu décomposes un problème en étapes écrites avant de chercher la solution',
   'Tu crées une page HTML valide avec header, main et footer',
   'Tu expliques la différence entre une classe et un id en CSS',
   'Ta page perso s\'affiche correctement sur ton téléphone',

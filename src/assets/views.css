@@ -900,7 +900,17 @@ html[data-theme="b"] .pill-alt { color: oklch(0.8 0.09 290); }
   white-space: nowrap;
 }
 .prep-pourquoi { font-style: italic; margin-bottom: 13px; }
-.prep-livrable { margin-top: 14px; }
+.prep-livrable { margin-top: 14px; width: fit-content; max-width: 100%; }
+.prep-bonus {
+  font-family: var(--font-mono); font-size: 10px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.04em;
+  color: var(--text-muted); padding: 1px 8px; border-radius: 20px;
+  border: 1px solid color-mix(in oklab, var(--accent) 25%, transparent);
+  background: var(--accent-tint);
+  white-space: nowrap;
+}
+.prep-cta { display: flex; margin-bottom: 30px; }
+.prep-cta .link { display: inline-flex; font-size: 13px; padding: 9px 14px; }
 .prep-link { margin-top: 10px; display: inline-flex; }
 .prep-check { list-style: none; display: flex; flex-direction: column; gap: 11px; }
 .prep-check li {

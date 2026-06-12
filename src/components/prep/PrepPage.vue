@@ -30,12 +30,20 @@ import {
       </div>
     </div>
 
-    <OvSection title="Les trois modules">
+    <div class="prep-cta">
+      <a class="link" :href="PREP_PARENT_LINK.url" target="_blank" rel="noopener">
+        <span class="link-label">{{ PREP_PARENT_LINK.label }}</span>
+        <span class="arr">↗</span>
+      </a>
+    </div>
+
+    <OvSection title="Le parcours de l'été">
       <div class="prep-modules">
         <div v-for="m in PREP_MODULES" :key="m.key" class="card prep-module">
           <div class="card-head">
             <span class="prep-emoji">{{ m.emoji }}</span>
             <span>{{ m.title }}</span>
+            <span v-if="m.bonus" class="prep-bonus">bonus</span>
             <span class="prep-hours">{{ m.hours }}</span>
           </div>
           <p class="prep-text prep-pourquoi">{{ m.pourquoi }}</p>

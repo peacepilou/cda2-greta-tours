@@ -12,6 +12,7 @@ const navItems: Array<{ key: ViewMode; label: string }> = [
   { key: 'compressed', label: 'Agenda' },
   { key: 'detailed',   label: 'Agenda détaillé' },
   { key: 'prep',       label: 'Préparation' },
+  { key: 'dossiers',   label: 'Dossiers' },
 ]
 </script>
 
@@ -54,6 +55,9 @@ const navItems: Array<{ key: ViewMode; label: string }> = [
       <svg v-else-if="item.key === 'prep'" class="nav-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6">
         <circle cx="10" cy="10" r="3.4"/>
         <path d="M10 2.2v2.2M10 15.6v2.2M2.2 10h2.2M15.6 10h2.2M4.6 4.6l1.55 1.55M13.85 13.85l1.55 1.55M15.4 4.6l-1.55 1.55M6.15 13.85L4.6 15.4"/>
+      </svg>
+      <svg v-else-if="item.key === 'dossiers'" class="nav-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6">
+        <path d="M2.5 4.5h7.5M2.5 4.5c-0.83 0-1.5 0.67-1.5 1.5v10c0 0.83 0.67 1.5 1.5 1.5h15c0.83 0 1.5-0.67 1.5-1.5v-10c0-0.83-0.67-1.5-1.5-1.5z"/>
       </svg>
       <span>{{ item.label }}</span>
     </button>

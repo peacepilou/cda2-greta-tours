@@ -7,6 +7,7 @@ const PAGE_META: Record<ViewMode, { title: string; sub: string }> = {
   compressed: { title: 'Agenda',         sub: "Les semaines en un coup d'œil" },
   detailed:   { title: 'Vue détaillée',  sub: 'Programme semaine par semaine' },
   prep:       { title: 'Préparation',    sub: "Cours de l'été · Remise à niveau avant le 24 septembre" },
+  dossiers:   { title: 'Dossiers',       sub: 'Évaluation jury CDA · 8 dossiers de projet' },
 }
 
 const VIEWS = Object.keys(PAGE_META) as ViewMode[]

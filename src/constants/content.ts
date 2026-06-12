@@ -7,7 +7,7 @@ export const CONTENT: Record<string, WeekContent> = {
     notions: [
       'Install postes : Terminal, VS Code, Node, Git, extensions',
       'Comptes GitHub et Notion — mise en place du daily standup',
-      'Diagnostic HTML/CSS/Terminal — qui vient d\'où, ce qui fait peur',
+      'Diagnostic HTML/CSS/Terminal — qui vient d\'où, ce qui fait peur · adossé aux cours de l\'été (onglet Préparation) : la page perso de l\'été servira en S43',
     ],
     ia: '',
     ia_mode: 'none',

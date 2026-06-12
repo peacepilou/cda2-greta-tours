@@ -5,6 +5,7 @@ import BlocLegend from './components/legend/BlocLegend.vue'
 import OverviewPage from './components/overview/OverviewPage.vue'
 import CompressedView from './components/planning/CompressedView.vue'
 import DetailedView from './components/planning/DetailedView.vue'
+import PrepPage from './components/prep/PrepPage.vue'
 import WeekModal from './components/modal/WeekModal.vue'
 import { useLegend } from './composables/useLegend'
 import { useModal } from './composables/useModal'
@@ -39,7 +40,7 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown))
         </div>
       </header>
 
-      <div class="legend" v-show="currentView !== 'overview'">
+      <div class="legend" v-show="currentView !== 'overview' && currentView !== 'prep'">
         <BlocLegend :legend="legend" />
       </div>
 
@@ -55,6 +56,7 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown))
           :legend="legend"
           @open="modal.open"
         />
+        <PrepPage v-else-if="currentView === 'prep'" />
       </div>
     </div>
 
@@ -91,6 +93,13 @@ onUnmounted(() => document.removeEventListener('keydown', onKeydown))
           <rect x="2.5" y="15" width="15" height="2.5" rx="1.2"/>
         </svg>
         <span>Détail</span>
+      </button>
+      <button class="mnav-btn" :class="{ active: currentView === 'prep' }" @click="setView('prep')">
+        <svg class="mnav-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6">
+          <circle cx="10" cy="10" r="3.4"/>
+          <path d="M10 2.2v2.2M10 15.6v2.2M2.2 10h2.2M15.6 10h2.2M4.6 4.6l1.55 1.55M13.85 13.85l1.55 1.55M15.4 4.6l-1.55 1.55M6.15 13.85L4.6 15.4"/>
+        </svg>
+        <span>Prépa</span>
       </button>
       <button class="mnav-btn mnav-cohort" @click="setCohort(cohort === 'TP' ? 'ALT' : 'TP')">
         <span class="pill" :class="cohort === 'TP' ? 'pill-tp' : 'pill-alt'">{{ cohort }}</span>

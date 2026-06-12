@@ -6,6 +6,7 @@ const PAGE_META: Record<ViewMode, { title: string; sub: string }> = {
   overview:   { title: "Vue d'ensemble", sub: 'Démarche pédagogique · GRETA Tours 2026–2027' },
   compressed: { title: 'Agenda',         sub: "Les semaines en un coup d'œil" },
   detailed:   { title: 'Vue détaillée',  sub: 'Programme semaine par semaine' },
+  prep:       { title: 'Préparation',    sub: "Cours de l'été · Remise à niveau avant le 24 septembre" },
 }
 
 const currentView = ref<ViewMode>(

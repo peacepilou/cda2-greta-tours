@@ -885,6 +885,32 @@ html[data-theme="b"] .pill-alt { color: oklch(0.8 0.09 290); }
   .mini { width: 82px; height: 82px; }
 }
 
+/* ==================================================================
+   PRÉPARATION (cours de l'été)
+   ================================================================== */
+.prep-callouts { margin-bottom: 30px; }
+.prep-text { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
+.prep-modules { display: flex; flex-direction: column; gap: 16px; }
+.prep-emoji { font-size: 16px; }
+.prep-hours {
+  margin-left: auto;
+  font-family: var(--font-mono); font-size: 10.5px; font-weight: 600;
+  color: var(--text-dim); padding: 2px 8px; border-radius: 20px;
+  border: 1px solid var(--border-soft); background: var(--bg-2);
+  white-space: nowrap;
+}
+.prep-pourquoi { font-style: italic; margin-bottom: 13px; }
+.prep-livrable { margin-top: 14px; }
+.prep-link { margin-top: 10px; display: inline-flex; }
+.prep-check { list-style: none; display: flex; flex-direction: column; gap: 11px; }
+.prep-check li {
+  font-size: 13px; color: var(--text-muted); line-height: 1.5;
+  display: flex; gap: 10px;
+}
+.prep-box { color: var(--accent); flex-shrink: 0; }
+.prep-foot { display: flex; margin-bottom: 30px; }
+.prep-foot .link { display: inline-flex; }
+
 /* ── ANIM entrée vues ── */
 @media (prefers-reduced-motion: no-preference) {
   .view-enter { animation: fade 0.32s cubic-bezier(0.2,0.8,0.2,1); }

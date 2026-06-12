@@ -11,6 +11,7 @@ const navItems: Array<{ key: ViewMode; label: string }> = [
   { key: 'overview',   label: "Vue d'ensemble" },
   { key: 'compressed', label: 'Agenda' },
   { key: 'detailed',   label: 'Agenda détaillé' },
+  { key: 'prep',       label: 'Préparation' },
 ]
 </script>
 
@@ -49,6 +50,10 @@ const navItems: Array<{ key: ViewMode; label: string }> = [
         <rect x="2.5" y="3" width="15" height="4.2" rx="1.4"/>
         <rect x="2.5" y="9" width="15" height="4.2" rx="1.4"/>
         <rect x="2.5" y="15" width="15" height="2.5" rx="1.2"/>
+      </svg>
+      <svg v-else-if="item.key === 'prep'" class="nav-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6">
+        <circle cx="10" cy="10" r="3.4"/>
+        <path d="M10 2.2v2.2M10 15.6v2.2M2.2 10h2.2M15.6 10h2.2M4.6 4.6l1.55 1.55M13.85 13.85l1.55 1.55M15.4 4.6l-1.55 1.55M6.15 13.85L4.6 15.4"/>
       </svg>
       <span>{{ item.label }}</span>
     </button>

@@ -29,4 +29,4 @@ export interface WeekContent {
   links: NotionLink[]
 }
 
-export type ViewMode = 'overview' | 'compressed' | 'detailed'
+export type ViewMode = 'overview' | 'compressed' | 'detailed' | 'prep'

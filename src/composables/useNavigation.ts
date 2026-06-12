@@ -9,9 +9,14 @@ const PAGE_META: Record<ViewMode, { title: string; sub: string }> = {
   prep:       { title: 'Préparation',    sub: "Cours de l'été · Remise à niveau avant le 24 septembre" },
 }
 
-const currentView = ref<ViewMode>(
-  ((readParam('view') ?? localStorage.getItem('cda2-view')) as ViewMode | null) ?? 'overview'
-)
+const VIEWS = Object.keys(PAGE_META) as ViewMode[]
+
+function isViewMode(v: string | null): v is ViewMode {
+  return v !== null && (VIEWS as string[]).includes(v)
+}
+
+const storedView = readParam('view') ?? localStorage.getItem('cda2-view')
+const currentView = ref<ViewMode>(isViewMode(storedView) ? storedView : 'overview')
 
 export function useNavigation() {
   function setView(v: ViewMode) {
